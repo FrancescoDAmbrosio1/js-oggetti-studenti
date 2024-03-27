@@ -27,8 +27,8 @@
                     <th scope="col">Età</th>
                   </tr>
                 </thead>
-                <tbody class="table-group-divider">
-                  <tr>
+                <tbody id="table-body" class="table-group-divider">
+                  <!-- <tr>
                     <td>Mark</td>
                     <td>Otto</td>
                     <td>@mdo</td>
@@ -37,15 +37,16 @@
                     <td>Jacob</td>
                     <td>Thornton</td>
                     <td>@fat</td>
-                  </tr>
+                  </tr> -->
                 </tbody>
               </table>
         </div>
         <!-- form di inserimento studente -->
         <div class="container">
-            <div class="row">
-                <div class="col-6">
-                    <div class="mb-3">
+            <div class="row justify-content-center">
+                <div class="col-6 border rounded p-3">
+                    <form id="form-new-student" action="">
+                      <div class="mb-3">
                         <label for="name" class="form-label">Inserire nome studente</label>
                         <input type="text" class="form-control" id="name" placeholder="name">
                     </div>
@@ -58,6 +59,7 @@
                         <input type="text" class="form-control" id="age" placeholder="età">
                     </div>
                     <button type="button" class="btn btn-primary">Inserisci</button>
+                    </form>
                 </div>
             </div>
         </div>
