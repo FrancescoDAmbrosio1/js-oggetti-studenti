@@ -28,6 +28,7 @@ const students = [
     },
 ]
 
+console.log(students);
 //PER OGNI oggetto dell'array pusho i valori all'interno della tabella
 for(let i = 0; i < students.length; i++){
     const currentStudent = students[i] 
@@ -38,16 +39,10 @@ for(let i = 0; i < students.length; i++){
     //mi recupero l'età dell'oggetto i
     const age = currentStudent.age  //object
     //inserisco studende nella tabella
-    const table = addStudentInTable(currentStudent)
-    const form = document.getElementById('form-new-student')
-    form.addEventListener('submit', addStudentInArray)
-    const newStudent = addStudentInArray(e)
-
+    addStudentInTable(currentStudent) 
 }
-//prendo dal DOM il campo nome del form
-//prendo dal DOM il campo cognome del form
-//prendo dal DOM il campo età del form
-//prendo dal DOM il submit e ne prevengo l'evento
+const form = document.getElementById('form-new-student')
+form.addEventListener('submit', addStudentInArray)
 
 //funzione per stampare membro sul DOM
 function addStudentInTable(currentStudent){
@@ -65,6 +60,21 @@ function addStudentInTable(currentStudent){
 
 //funzione per pushare studente dal form all'array
 function addStudentInArray(e){
+    //disabilitare il funzionamento del submit
     e.preventDefault()
-
+    //prendo dal DOM i campi del form
+    const name = document.getElementById('name').value;
+    const surname = document.getElementById('surname').value;
+    const age = document.getElementById('age').value;
+    //creo il nuovo studente
+    const newStudent = {
+        name: name,
+        surname: surname,
+        age: age,
+    }
+    console.log(newStudent);
+    //pusho il nuvo studente nell'array
+    students.push(newStudent)
+    console.log(students);
+    addStudentInTable(newStudent)
 }
